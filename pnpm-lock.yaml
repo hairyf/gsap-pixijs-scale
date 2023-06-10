@@ -4,6 +4,9 @@ dependencies:
   '@vueuse/core':
     specifier: ^10.1.2
     version: 10.1.2(vue@3.3.4)
+  pixi-projection:
+    specifier: ^1.0.0
+    version: 1.0.0(@pixi-spine/base@4.0.3)(@pixi/core@7.2.4)(@pixi/display@7.2.4)(@pixi/graphics@7.2.4)(@pixi/mesh-extras@7.2.4)(@pixi/mesh@7.2.4)(@pixi/sprite-tiling@7.2.4)(@pixi/sprite@7.2.4)(@pixi/text@7.2.4)
   pixi.js:
     specifier: ^7.2.4
     version: 7.2.4(@pixi/utils@7.2.4)
@@ -11,8 +14,11 @@ dependencies:
     specifier: ^3.2.47
     version: 3.3.4
   vue3-pixi:
-    specifier: ^0.6.4
-    version: 0.6.4(@pixi/utils@7.2.4)(vue@3.3.4)
+    specifier: ^0.7.8
+    version: 0.7.8(@pixi/utils@7.2.4)(vue@3.3.4)
+  vue3-pixi-projection:
+    specifier: ^0.7.8
+    version: 0.7.8(@pixi-spine/base@4.0.3)(@pixi/core@7.2.4)(@pixi/display@7.2.4)(@pixi/graphics@7.2.4)(@pixi/mesh-extras@7.2.4)(@pixi/mesh@7.2.4)(@pixi/sprite-tiling@7.2.4)(@pixi/sprite@7.2.4)(@pixi/text@7.2.4)(@pixi/utils@7.2.4)(vue@3.3.4)
 
 devDependencies:
   '@vitejs/plugin-vue':
@@ -257,6 +263,24 @@ packages:
 
   /@jridgewell/sourcemap-codec@1.4.15:
     resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
+
+  /@pixi-spine/base@4.0.3(@pixi/core@7.2.4)(@pixi/display@7.2.4)(@pixi/graphics@7.2.4)(@pixi/mesh-extras@7.2.4)(@pixi/mesh@7.2.4)(@pixi/sprite@7.2.4):
+    resolution: {integrity: sha512-0bunaWebaDswLFtYZ6whV+ZvgLQ7oANcvbPmIOoVpS/1pOY3Y/GAnWOFbgp3qt9Q/ntLYqNjGve6xq0IqpsTAA==}
+    peerDependencies:
+      '@pixi/core': ^7.0.0
+      '@pixi/display': ^7.0.0
+      '@pixi/graphics': ^7.0.0
+      '@pixi/mesh': ^7.0.0
+      '@pixi/mesh-extras': ^7.0.0
+      '@pixi/sprite': ^7.0.0
+    dependencies:
+      '@pixi/core': 7.2.4
+      '@pixi/display': 7.2.4(@pixi/core@7.2.4)
+      '@pixi/graphics': 7.2.4(@pixi/core@7.2.4)(@pixi/display@7.2.4)(@pixi/sprite@7.2.4)
+      '@pixi/mesh': 7.2.4(@pixi/core@7.2.4)(@pixi/display@7.2.4)
+      '@pixi/mesh-extras': 7.2.4(@pixi/core@7.2.4)(@pixi/mesh@7.2.4)
+      '@pixi/sprite': 7.2.4(@pixi/core@7.2.4)(@pixi/display@7.2.4)
+    dev: false
 
   /@pixi/accessibility@7.2.4(@pixi/core@7.2.4)(@pixi/display@7.2.4)(@pixi/events@7.2.4):
     resolution: {integrity: sha512-EVjuqUqv9FeYFXCv0S0qj1hgCtbAMNBPCbOGEtiMogpM++/IySxBZvcOYg3rRgo9inwt2s4Bi7kUiqMPD8hItw==}
@@ -681,57 +705,6 @@ packages:
       typescript: 5.0.4
     dev: true
 
-  /@vue-pixi/components@0.6.4(@pixi/utils@7.2.4)(vue@3.3.4):
-    resolution: {integrity: sha512-Mo/ZDZOuxK8vZB+8fQasy4tIEKKjBn38C7SecCeWZtBamyDjyaWM7etMqKZxrnC8zCWyiGQCasDSm+2XpA70IQ==}
-    dependencies:
-      '@antfu/utils': 0.7.2
-      '@vue-pixi/composables': 0.6.4(@pixi/utils@7.2.4)(vue@3.3.4)
-      '@vue-pixi/renderer': 0.6.4(@pixi/utils@7.2.4)(vue@3.3.4)
-      nanoid: 4.0.2
-      pixi.js: 7.2.4(@pixi/utils@7.2.4)
-      vue-demi: 0.14.5(vue@3.3.4)
-    transitivePeerDependencies:
-      - '@pixi/utils'
-      - '@vue/composition-api'
-      - vue
-    dev: false
-
-  /@vue-pixi/composables@0.6.4(@pixi/utils@7.2.4)(vue@3.3.4):
-    resolution: {integrity: sha512-9g/fqpby9zwtUKFSjKNTMsJ2SOSL3/al+as93G9PxgWoep5aAbpgieN/Aw2kCHzwgCsqIquoqFVbETmc8/4U6A==}
-    dependencies:
-      '@vueuse/core': 10.1.2(vue@3.3.4)
-      pixi.js: 7.2.4(@pixi/utils@7.2.4)
-      vue-demi: 0.14.5(vue@3.3.4)
-    transitivePeerDependencies:
-      - '@pixi/utils'
-      - '@vue/composition-api'
-      - vue
-    dev: false
-
-  /@vue-pixi/renderer@0.6.4(@pixi/utils@7.2.4)(vue@3.3.4):
-    resolution: {integrity: sha512-WSiJ4slvH3ZknykebWLyW71DJKQI9MyWRFNKEyJG0a+mNEBdBzPwXnUmz/AL5b67swVT2Tn3gIa4vu89cmtQuw==}
-    dependencies:
-      '@antfu/utils': 0.7.2
-      pixi.js: 7.2.4(@pixi/utils@7.2.4)
-      vue-demi: 0.14.5(vue@3.3.4)
-    transitivePeerDependencies:
-      - '@pixi/utils'
-      - '@vue/composition-api'
-      - vue
-    dev: false
-
-  /@vue-pixi/transition@0.6.4(@pixi/utils@7.2.4)(vue@3.3.4):
-    resolution: {integrity: sha512-zx6CMCEtOIgYJHidPwtTBYYKPr75Wgxg/Nd11NXypPUNfIooI95dn6Q5NmPr/iNqf/AvjUdYnTG+rlzsaTq9iw==}
-    dependencies:
-      '@antfu/utils': 0.7.2
-      pixi.js: 7.2.4(@pixi/utils@7.2.4)
-      vue-demi: 0.14.5(vue@3.3.4)
-    transitivePeerDependencies:
-      - '@pixi/utils'
-      - '@vue/composition-api'
-      - vue
-    dev: false
-
   /@vue/compiler-core@3.3.4:
     resolution: {integrity: sha512-cquyDNvZ6jTbf/+x+AgM2Arrp6G4Dzbb0R64jiG804HRMfRiFXWI6kqUVqZ6ZR0bQhIoQjB4+2bhNtVwndW15g==}
     dependencies:
@@ -947,6 +920,31 @@ packages:
   /picocolors@1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
 
+  /pixi-projection@1.0.0(@pixi-spine/base@4.0.3)(@pixi/core@7.2.4)(@pixi/display@7.2.4)(@pixi/graphics@7.2.4)(@pixi/mesh-extras@7.2.4)(@pixi/mesh@7.2.4)(@pixi/sprite-tiling@7.2.4)(@pixi/sprite@7.2.4)(@pixi/text@7.2.4):
+    resolution: {integrity: sha512-+fV7SA69OLxNR3nXOoR6Z5vFTqcp3oH/+sHXsQ+Jw6J9nOK+APzlrnCcO3ftB9Y/GIVgR3+HIDpKpRWe6EPPSw==}
+    engines: {node: '>=16', npm: '>=8'}
+    peerDependencies:
+      '@pixi-spine/base': ^4.0.3
+      '@pixi/core': ^7.2.0
+      '@pixi/display': ^7.2.0
+      '@pixi/graphics': ^7.2.0
+      '@pixi/mesh': ^7.2.0
+      '@pixi/mesh-extras': ^7.2.0
+      '@pixi/sprite': ^7.2.0
+      '@pixi/sprite-tiling': ^7.2.0
+      '@pixi/text': ^7.2.0
+    dependencies:
+      '@pixi-spine/base': 4.0.3(@pixi/core@7.2.4)(@pixi/display@7.2.4)(@pixi/graphics@7.2.4)(@pixi/mesh-extras@7.2.4)(@pixi/mesh@7.2.4)(@pixi/sprite@7.2.4)
+      '@pixi/core': 7.2.4
+      '@pixi/display': 7.2.4(@pixi/core@7.2.4)
+      '@pixi/graphics': 7.2.4(@pixi/core@7.2.4)(@pixi/display@7.2.4)(@pixi/sprite@7.2.4)
+      '@pixi/mesh': 7.2.4(@pixi/core@7.2.4)(@pixi/display@7.2.4)
+      '@pixi/mesh-extras': 7.2.4(@pixi/core@7.2.4)(@pixi/mesh@7.2.4)
+      '@pixi/sprite': 7.2.4(@pixi/core@7.2.4)(@pixi/display@7.2.4)
+      '@pixi/sprite-tiling': 7.2.4(@pixi/core@7.2.4)(@pixi/display@7.2.4)(@pixi/sprite@7.2.4)
+      '@pixi/text': 7.2.4(@pixi/core@7.2.4)(@pixi/sprite@7.2.4)
+    dev: false
+
   /pixi.js@7.2.4(@pixi/utils@7.2.4):
     resolution: {integrity: sha512-nBH60meoLnHxoMFz17HoMxXS4uJpG5jwIdL+Gx2S11TzWgP3iKF+/WLOTrkSdyuQoQSdIBxVqpnYii0Wiox15A==}
     dependencies:
@@ -1105,13 +1103,36 @@ packages:
       typescript: 5.0.4
     dev: true
 
-  /vue3-pixi@0.6.4(@pixi/utils@7.2.4)(vue@3.3.4):
-    resolution: {integrity: sha512-3zI5J0URhB7DDBuJuL0o8eplc3DEbMK8UcfbattHidmxQWxCifyf/VTvZBgl+1ACUSr65UaAaNzqDgP09Pf2gA==}
+  /vue3-pixi-projection@0.7.8(@pixi-spine/base@4.0.3)(@pixi/core@7.2.4)(@pixi/display@7.2.4)(@pixi/graphics@7.2.4)(@pixi/mesh-extras@7.2.4)(@pixi/mesh@7.2.4)(@pixi/sprite-tiling@7.2.4)(@pixi/sprite@7.2.4)(@pixi/text@7.2.4)(@pixi/utils@7.2.4)(vue@3.3.4):
+    resolution: {integrity: sha512-HgV1AuBEboDHVL/x9i+CiJjRfvxRv+mukrW5kU/E4k4F5MQnNogRxMIVbYXy+AB7qq+2+4aOl9ZEze+Yq1vHKQ==}
     dependencies:
-      '@vue-pixi/components': 0.6.4(@pixi/utils@7.2.4)(vue@3.3.4)
-      '@vue-pixi/composables': 0.6.4(@pixi/utils@7.2.4)(vue@3.3.4)
-      '@vue-pixi/renderer': 0.6.4(@pixi/utils@7.2.4)(vue@3.3.4)
-      '@vue-pixi/transition': 0.6.4(@pixi/utils@7.2.4)(vue@3.3.4)
+      '@antfu/utils': 0.7.2
+      pixi-projection: 1.0.0(@pixi-spine/base@4.0.3)(@pixi/core@7.2.4)(@pixi/display@7.2.4)(@pixi/graphics@7.2.4)(@pixi/mesh-extras@7.2.4)(@pixi/mesh@7.2.4)(@pixi/sprite-tiling@7.2.4)(@pixi/sprite@7.2.4)(@pixi/text@7.2.4)
+      vue-demi: 0.14.5(vue@3.3.4)
+      vue3-pixi: 0.7.8(@pixi/utils@7.2.4)(vue@3.3.4)
+    transitivePeerDependencies:
+      - '@pixi-spine/base'
+      - '@pixi/core'
+      - '@pixi/display'
+      - '@pixi/graphics'
+      - '@pixi/mesh'
+      - '@pixi/mesh-extras'
+      - '@pixi/sprite'
+      - '@pixi/sprite-tiling'
+      - '@pixi/text'
+      - '@pixi/utils'
+      - '@vue/composition-api'
+      - vue
+    dev: false
+
+  /vue3-pixi@0.7.8(@pixi/utils@7.2.4)(vue@3.3.4):
+    resolution: {integrity: sha512-YMvqUDjRNH4E/02XQNImlSCtyw5IH1noHKjI0ZjWj7GFwuK5606iuHD90fUygc8ne8RMjNE4bEJ+XEksw0eQfQ==}
+    dependencies:
+      '@antfu/utils': 0.7.2
+      '@vueuse/core': 10.1.2(vue@3.3.4)
+      nanoid: 4.0.2
+      pixi.js: 7.2.4(@pixi/utils@7.2.4)
+      vue-demi: 0.14.5(vue@3.3.4)
     transitivePeerDependencies:
       - '@pixi/utils'
       - '@vue/composition-api'

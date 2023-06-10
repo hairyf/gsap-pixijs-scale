@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "composite": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
     "module": "ESNext",
     "moduleResolution": "node",
