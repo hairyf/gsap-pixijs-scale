@@ -4,7 +4,6 @@ import { Texture, SCALE_MODES } from 'pixi.js'
 import lightningLineSVG from '../assets/lightning_2.svg'
 import lightningRectSVG from '../assets/lightning_1.svg'
 import { computed } from 'vue';
-import {Camera3d} from 'pixi-projection'
 
 defineProps<{
   scale: number
